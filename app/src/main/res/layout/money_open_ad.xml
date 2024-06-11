@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray_"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_75sdp"
+            android:background="@color/dark_gray_"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:background="@drawable/cardview_white_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_7sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/ic_launcher" />
+
+                <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:fontFamily="@font/author_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@string/continue_to_app"
+                    android:textColor="@color/qreka_text_color"
+                    android:textSize="@dimen/_17ssp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_menu_right_arrow" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_75sdp"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cardview_white_bg_tl_tr">
+
+
+                <LinearLayout
+                    android:id="@+id/llMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/author_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/advertisement"
+                        android:textColor="@color/qreka_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@color/default_gray"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifView"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_pre_money_gif_2" />
+
+                        <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                            android:id="@+id/tvHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/author_bold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLines="2"
+                            android:singleLine="false"
+                            android:text="@string/mgl_play_game"
+                            android:textColor="@color/qreka_text_color"
+                            android:textSize="@dimen/_19ssp" />
+
+                        <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                            android:id="@+id/tital1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:fontFamily="@font/author_semibold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="@string/play_and_win_coins_daily"
+                            android:textColor="@color/qreka_text_color"
+                            android:textSize="@dimen/_18ssp" />
+
+                       <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                            android:id="@+id/tital2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/author_regular"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="@string/play_and_win_coins_daily"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_175sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/imgBanner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_pre_money_small_native2" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                       <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                            android:id="@+id/tvBottomText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/author_regular"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="@string/play_quiz_win_upto_50_000_coins"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeButton
+                            android:id="@+id/btnPlayNow"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_45sdp"
+                            android:layout_marginHorizontal="@dimen/_25sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/btn_blue_btn"
+                            android:fontFamily="@font/author_bold"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="@string/play_now"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.GenerateListActivity">
+
+    <include
+        android:id="@+id/toolBarView"
+        layout="@layout/tool_bar" />
+
+
+    <include
+        android:id="@+id/llVachaliMoneyView"
+        layout="@layout/money_custom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCodeList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"/>
+
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_gray"
+    android:orientation="vertical">
+
+    <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/yellow_bg_tr_br_365"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:singleLine="true"
+        android:text="@string/ad_attribution"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:fontFamily="@font/author_semibold" />
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifView"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_pre_money_gif_2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:orientation="vertical">
+
+
+                <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                    android:id="@+id/tvHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="@string/mgl_play_game"
+                    android:textColor="@color/qreka_text_color"
+                    android:textSize="@dimen/_19ssp"
+                    android:fontFamily="@font/author_bold" />
+
+                <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+                    android:id="@+id/tital1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="@string/play_bollywood_prediction_win_coins_daily"
+                    android:textColor="@color/qreka_text_color"
+                    android:textSize="@dimen/_16ssp"
+                    android:fontFamily="@font/author_regular" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+            android:id="@+id/tital2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="@string/play_bollywood_prediction_win_coins_daily"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            android:visibility="gone"
+            android:fontFamily="@font/author_regular" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_175sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp">
+
+                <ImageView
+                    android:id="@+id/imgBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_pre_money_small_native2" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeTextView
+            android:id="@+id/tvBottomText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="@string/quiz_for_15_000_coins_calling_you"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/author_regular" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            >
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+
+
+
+            <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeButton
+                android:id="@+id/btnClose"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_blue_ring"
+                android:fontFamily="@font/author_bold"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:includeFontPadding="false"
+                android:scaleType="fitXY"
+                android:text="@string/close"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp" />
+
+            <View
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_1sdp" />
+
+            <com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.view.CodeButton
+                android:id="@+id/btnPlayNow"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+
+                android:layout_weight="1"
+                android:background="@drawable/btn_qureka"
+                android:fontFamily="@font/author_bold"
+                android:includeFontPadding="false"
+                android:scaleType="fitXY"
+                android:text="@string/play_now"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

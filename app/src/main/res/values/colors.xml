@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FD9433</color>
+    <color name="light_grey">#F8F7F9</color>
+    <color name="hint_color">#757783</color>
+    <color name="text">#2E2E2E</color>
+
+    <color name="advertise_bg">#FFB62E</color>
+    <color name="ads_desc_text_color">#000000</color>
+    <color name="dark_gray_">#939292</color>
+    <color name="qreka_text_color">#000000</color>
+    <color name="default_gray">#FAFAFA</color>
+    <color name="background">#dddddd</color>
+    <color name="adv_light_gray">#EAEAEA</color>
+    <color name="blue">#6FC1F4</color>
+    <color name="dark_gray">#777777</color>
+    <color name="yellow">#FFD300</color>
+
+</resources>

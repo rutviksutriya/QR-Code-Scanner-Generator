@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#80000000"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_15sdp"
+        android:elevation="@dimen/_2sdp"
+        android:gravity="center"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp">
+
+
+
+            <TextView
+                android:id="@+id/tvDialogTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/librefranklin_bold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:includeFontPadding="false"
+                android:text="@string/app_name"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/tvDialogDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/librefranklin_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/app_name"
+                android:textColor="#151515"
+                android:textSize="@dimen/_14ssp" />
+
+
+
+            <TextView
+                android:id="@+id/tvDialogOk"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/btn_orange_n"
+                android:fontFamily="@font/librefranklin_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <LinearLayout
+                android:id="@+id/llTow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvDialogCancelEx"
+
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_orange_n"
+                    android:backgroundTint="#888888"
+                    android:fontFamily="@font/librefranklin_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="No"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp" />
+
+                <View
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_1sdp" />
+
+                <TextView
+                    android:id="@+id/tvDialogOkEx"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_orange_n"
+                    android:fontFamily="@font/librefranklin_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/ok"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

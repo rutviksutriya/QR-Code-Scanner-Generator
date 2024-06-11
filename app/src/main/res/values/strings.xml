@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">QR Code Scanner &amp; Generator</string>
+    <string name="ok">Ok</string>
+    <string name="no_app_found">No application that can handle this link found</string>
+    <string name="try_again">Try Again</string>
+    <string name="check_internet">Your internet is not available, please try again later</string>
+    <string name="url_not_valid">Invalid Url.</string>
+    <string name="play_game">Play Game</string>
+    <string name="bitcoin_play_game">Qureka/Play game</string>
+    <string name="delete">Delete</string>
+    <string name="generate_qr">Generate QR</string>
+    <string name="mgl_play_game">MGL/Play Game</string>
+    <string name="scanner_history">"Scanner History"</string>
+    <string name="update_mssg">An update of app is available now.</string>
+    <string name="play_and_win_coins_daily"><![CDATA[Play & Win Coins Daily]]></string>
+    <string name="close">Close</string>
+    <string name="play_bollywood_prediction_win_coins_daily"><![CDATA[Play Bollywood Prediction & win coins daily]]></string>
+    <string name="setting">"Settings"</string>
+    <string name="continue_to_app">Continue to app</string>
+    <string name="play_car_racing_game_earn_upto_50_000_coins"><![CDATA[Play Car Racing Game & Earn Upto 50,000 Coins]]></string>
+    <string name="contact">"Contact"</string>
+    <string name="advertisement">Advertisement</string>
+    <string name="quiz_for_15_000_coins_calling_you">Quiz for 15,000 Coins calling you!???</string>
+    <string name="share_data">"Share Data"</string>
+    <string name="play_quiz_win_upto_50_000_coins"><![CDATA[Play Quiz & Win Upto 50,000 Coins]]></string>
+    <string name="update" translatable="false">Update</string>
+    <string name="start">Start</string>
+    <string name="scan_qr_code">"Scan QR Code"</string>
+    <string name="prev">Prev</string>
+    <string name="yes">Yes</string>
+    <string name="exit_app">Exit App</string>
+    <string name="play_now">Play Now</string>
+    <string name="are_you_sure_you_want_to_quit_this_app">Are you sure you want to quit this app?</string>
+
+    <string name="rate_us">Rate Us</string>
+    <string name="ad_attribution">Ad</string>
+    <string name="are_you_sure_you_want_to_delete">"Are you sure you want to delete?"</string>
+    <string name="play_games">MGL/Play game</string>
+    <string name="preadchamp_play_game">Preadchamp/Play game</string>
+</resources>

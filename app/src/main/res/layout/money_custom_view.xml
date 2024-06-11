@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/llMotoCurtain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:background="@drawable/google_ads_bg"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/nativeCurtain"
+                layout="@layout/curtain_moti_ads" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNaniCurtain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp"
+            android:background="@drawable/google_ads_bg"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/nativeNaniCurtain"
+                layout="@layout/curtain_vachali_ads" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="true"
+            android:overScrollMode="never">
+
+            <com.facebook.ads.NativeAdLayout
+                android:id="@+id/moneyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="true"
+            android:overScrollMode="never">
+
+            <FrameLayout
+                android:id="@+id/flPlaceView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>
