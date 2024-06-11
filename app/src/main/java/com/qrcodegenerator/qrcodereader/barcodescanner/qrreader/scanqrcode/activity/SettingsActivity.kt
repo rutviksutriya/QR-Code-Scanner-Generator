@@ -27,9 +27,7 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding>() {
                 val myapp = Intent(Intent.ACTION_SEND)
                 myapp.setType("text/plain")
                 myapp.putExtra(
-                    Intent.EXTRA_TEXT, """${getString(R.string.app_name)}
-
-                    https://play.google.com/store/apps/details?id=$packageName""" + " \n"
+                    Intent.EXTRA_TEXT, getString(R.string.app_name)+ "\n\n"+ Constant.tiny
                 )
                 startActivity(myapp)
             }

@@ -5,8 +5,7 @@ import android.os.Handler
 import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
-import com.google.firebase.FirebaseApp
-import com.google.firebase.messaging.FirebaseMessaging
+
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.BuildConfig
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.MyAppClass
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
@@ -56,8 +55,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
             })
     }
     private fun init() {
-        FirebaseApp.initializeApp(this@SplashActivity)
-        FirebaseMessaging.getInstance().isAutoInitEnabled = true
         if (isOnline()) {
             callAppsAdsApi()
         } else {
@@ -106,8 +103,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                                     Constant.IS_INFO, data.is_info_available
                                 )
                             }
-
-
 
                             SharedPrefData.setString(Constant.isAdAvailable, data.is_advertise_available.removeSpace())
                             SharedPrefData.setString(Constant.IS_QUREKA, data.is_qureka.removeSpace())
@@ -158,7 +153,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                                     Constant.adsPriority = priority.removeSpace()
                                     LessMoneyBannerAds.loadPattiAds(this@SplashActivity, binding.llPattiMoneyView.nativeAdContainer50, this@SplashActivity.findViewById(R.id.llBanner50))
                                     loadInterMoney(this@SplashActivity)
-                                    Handler(mainLooper).postDelayed(Runnable {
+                                    Handler(mainLooper).postDelayed({
                                         if (priority.isCheckNotEmpty() && priority.removeSpace().equals("G", ignoreCase = true)) {
 
                                             //     Enter when priority G
@@ -371,6 +366,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                 startActivity(intent)
                 finish()
             } else {
+
                 val intent = Intent(this@SplashActivity, OnBoardingActivity::class.java)
                 startActivity(intent)
                 finish()

@@ -83,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_no_data"/>
                 <TextView
+                    android:id="@+id/tvNoData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#0B0E21"

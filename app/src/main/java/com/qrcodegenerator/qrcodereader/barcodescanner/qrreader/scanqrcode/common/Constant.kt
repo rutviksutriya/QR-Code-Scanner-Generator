@@ -11,7 +11,8 @@ import java.io.IOException
 
 
 object Constant {
-    var DEVELOPER_NAME = "FluxApps"
+    var DEVELOPER_NAME = "Color Call Themes"
+    var tiny = "https://tinyurl.com/mr2c3y4b"
     var PRIVACY_LINK = BuildConfig.PP
     const val IS_FIRST_TIME = "isFirstTime"
     var dialogTrue = true
@@ -48,25 +49,13 @@ object Constant {
 
     const val fbNativeAd = "fb_native_ad"
     const val gNativeAd = "g_native_ad"
-    const val gCollapseBanner = "g_collapse_banner"
     const val fbSmallNativeBanner = "fb_small_native_banner_ad"
     const val gBanner = "g_banner_ad"
     const val fbNativeBannerAd = "fb_native_banner_ad"
     const val gNativeBannerAd = "g_native_banner_ad"
     const val fbInterstitialAd = "fb_interstitial_ad"
-    const val fbRewardInterAd = "fb_reward_inter_ad"
     const val gInterstitialAd = "g_interstitial_ad"
     const val gAppOpenAds = "g_app_open_ad"
-    const val gRewardedVideo = "g_reward_video_ad"
-
-
-
-
-
-
-
-
-
 
 
 

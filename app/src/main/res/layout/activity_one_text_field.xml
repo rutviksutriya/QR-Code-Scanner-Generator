@@ -62,7 +62,7 @@
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/btn_orange"
+            android:background="@drawable/btn_orange_b"
             android:fontFamily="@font/librefranklin_bold"
             android:gravity="center"
             android:includeFontPadding="false"

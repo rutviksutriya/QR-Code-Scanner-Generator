@@ -148,6 +148,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
+    var dialog: Dialog? = null
+
     private fun showExitDialog() {
         dialog = CustomBottomDialog(this@MainActivity,
             object : OnCustomBottomDialogListener<DialogExitFromAppBinding> {
@@ -203,8 +205,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             }).getDialog()
     }
-
-    var dialog: Dialog? = null
 
 
     private fun showUpdateDialog() {
@@ -268,11 +268,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private fun getCameraPermission() {
         if (!isCameraGranted()) {
-            ActivityCompat.requestPermissions(
-                this@MainActivity,
-                arrayOf(Manifest.permission.CAMERA),
-                requestCodeCamera
-            )
+
+            startActivity(Intent(this@MainActivity, PermissionActivity::class.java))
+
         } else {
 
             if (isOnline()) {
@@ -322,43 +320,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             } else {
                 getPushNotificationPermission()
             }
-        } else if (requestCode == this.requestCodeCamera) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                if (isOnline()) {
-                    if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
-                        return
-                    }
-                    mLastClickTime = SystemClock.elapsedRealtime()
-                    InterMoneyAds.showForwardCountInterMoney(this@MainActivity, 101, object :
-                        AagalJav {
-                        override fun onNext() {
-                            startActivity(Intent(this@MainActivity, ScanQRCodeActivity::class.java))
-
-                        }
-                    })
-                }else{
-                    showNoInternet {
-                        startActivity(Intent(this@MainActivity, ScanQRCodeActivity::class.java))
-
-                    }
-                }
-            } else {
-
-
-                showDialog(
-                    getString(R.string.app_name),
-                    "Allow " + this@MainActivity.resources.getString(R.string.app_name) + " to take pictures?",
-                    true
-                ) {
-                    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    val uri = Uri.fromParts("package", packageName, null)
-                    intent.data = uri
-                    startActivity(intent)
-                }
-
-
-            }
         }
 
     }
@@ -367,40 +328,25 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         val isNotifyAllow =
             NotificationManagerCompat.from(this@MainActivity).areNotificationsEnabled()
         if (!isNotifyAllow) {
-            showAbove13NotificationDialog(
-                this@MainActivity
-            )
-        }
-    }
 
-    private fun showAbove13NotificationDialog(activity: Activity?) {
-
-        activity?.let {
-
-            if (!activity.isFinishing) {
-                showDialog(
-                    "Alert Notification",
-                    "Allow " + this@MainActivity.resources.getString(R.string.app_name) + " to send you notification?",
-                    true
-                ) {
-                    val intent = Intent()
-                    intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    intent.putExtra("app_package", this@MainActivity.packageName)
-                    intent.putExtra("app_uid", this@MainActivity.applicationInfo.uid)
-                    intent.putExtra(
-                        "android.provider.extra.APP_PACKAGE", this@MainActivity.packageName
-                    )
-                    this@MainActivity.startActivity(intent)
-                }
-
-
+            showDialog(
+                "Alert Notification",
+                "Allow " + this@MainActivity.resources.getString(R.string.app_name) + " to send you notification?",
+                true
+            ) {
+                val intent = Intent()
+                intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                intent.putExtra("app_package", this@MainActivity.packageName)
+                intent.putExtra("app_uid", this@MainActivity.applicationInfo.uid)
+                intent.putExtra(
+                    "android.provider.extra.APP_PACKAGE", this@MainActivity.packageName
+                )
+                this@MainActivity.startActivity(intent)
             }
-
         }
-
-
     }
+
 
     override fun initIntentData() {
 

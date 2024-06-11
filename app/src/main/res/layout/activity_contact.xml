@@ -177,7 +177,7 @@
             android:layout_height="@dimen/_45sdp"
             android:includeFontPadding="false"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/btn_orange"
+            android:background="@drawable/btn_orange_b"
             android:layout_margin="@dimen/_10sdp"
             android:fontFamily="@font/librefranklin_bold"
             android:gravity="center"

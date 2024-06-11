@@ -228,7 +228,6 @@ class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
                         }
                     }
                 rvScannerHistory.adapter = adapter
-                llNoData.visibility = View.VISIBLE
 
                 getCodeHistory()
             }
@@ -261,6 +260,7 @@ class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
         }
         if(historyModel.size == 0) {
             binding.llNoData.visibility = View.VISIBLE
+            binding.tvNoData.text = "Generate history not found"
             adapter?.setDataHis(historyModel)
         }else{
             binding.llNoData.visibility = View.GONE
@@ -359,10 +359,11 @@ class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
                 }
 
             rvScannerHistory.adapter = adapter
-            llNoData.visibility = View.VISIBLE
 
             if (historyModel.size == 0) {
                 llNoData.visibility = View.VISIBLE
+                binding.tvNoData.text = "Scanner history not found"
+
                 adapter?.setDataHis(historyModel)
             } else {
                 llNoData.visibility = View.GONE

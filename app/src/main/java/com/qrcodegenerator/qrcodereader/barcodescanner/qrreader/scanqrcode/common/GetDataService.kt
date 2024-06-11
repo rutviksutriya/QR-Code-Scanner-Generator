@@ -9,7 +9,7 @@ import retrofit2.http.GET
 
 interface GetDataService {
 
-    @GET("getAppAdChange?app_id=1")
+    @GET("getAppAdChange?app_id=2")
     fun getExample(): Call<GetMoneyModel>
 
 
