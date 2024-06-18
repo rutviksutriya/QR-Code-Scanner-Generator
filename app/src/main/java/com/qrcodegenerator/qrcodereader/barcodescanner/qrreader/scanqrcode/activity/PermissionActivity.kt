@@ -41,6 +41,8 @@ class PermissionActivity :  BaseActivity<ActivityPermissionBinding>() {
     override fun initView() {
         enableEdgeToEdge()
         binding.apply {
+            ivBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
+
 
             tvAllow.setOnClickListener {
 

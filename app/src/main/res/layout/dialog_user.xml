@@ -15,7 +15,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_margin="@dimen/_15sdp"
         android:background="@drawable/bg_update">
 
 
@@ -90,7 +90,7 @@
                     android:fontFamily="@font/librefranklin_bold"
                     android:gravity="center"
                     android:includeFontPadding="false"
-                    android:text="No, Thanks"
+                    android:text="Cancel"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_16ssp" />
 

@@ -357,6 +357,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
 
     private fun startNextIntent() {
+        AppOpenMoney.isShowingMoney = false
+        Constant.issplashshowed = true
 
 
         Handler(mainLooper).postDelayed({

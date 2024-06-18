@@ -28,7 +28,7 @@
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:inputType="text"
-            android:paddingStart="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:textColor="@color/black"
             android:imeOptions="actionNext"
             android:textColorHint="@color/hint_color"
@@ -65,11 +65,14 @@
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:inputType="text"
-            android:paddingStart="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:textColor="@color/black"
+
             android:imeOptions="actionDone"
             android:textColorHint="@color/hint_color"
             android:textSize="@dimen/_14ssp" />
+
+
 
     </LinearLayout>
 

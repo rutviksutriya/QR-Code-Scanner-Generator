@@ -95,6 +95,14 @@ fun String.isCheckNotEmpty(): Boolean {
     return !isNullOrEmpty() && isNotBlank() && value != "null" && !value.equals("NA", ignoreCase = true) && !value.equals("N/A", ignoreCase = true)
 }
 
+fun String.isEmptyText(): Boolean {
+    val value = removeSpace()
+    return value.equals(
+        "", ignoreCase = true
+    ) || value.isEmpty() || value.equals("null", ignoreCase = true)
+}
+
+
 fun View.visible() {
     this.visibility = View.VISIBLE
 }
@@ -157,9 +165,18 @@ fun Context.openUrl(url: String) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             val activityInfo = intent.resolveActivityInfo(packageManager, intent.flags)
             activityInfo?.let {
-                if (activityInfo.exported) {
-                    ActivityCompat.startActivity(this, intent, null)
+                try {
+                    if (activityInfo.exported) {
+                        ActivityCompat.startActivity(this, intent, null)
+                    }
+                }catch (e : Exception){
+                    Toast.makeText(
+                        this,
+                        this.getString(R.string.no_app_found),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
+
             }
 
         } catch (e: ActivityNotFoundException) {
@@ -173,6 +190,7 @@ fun Context.openUrl(url: String) {
     }else{
         Toast.makeText(this,  this.getString(R.string.url_not_valid), Toast.LENGTH_SHORT).show()
     }
+
 
 }
 

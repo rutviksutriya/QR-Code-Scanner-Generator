@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:text="757783"
                     android:layout_gravity="center_vertical"
-                    android:textColor="#757783"
+                    android:textColor="@color/orange"
                     android:singleLine="true"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:ellipsize="end"

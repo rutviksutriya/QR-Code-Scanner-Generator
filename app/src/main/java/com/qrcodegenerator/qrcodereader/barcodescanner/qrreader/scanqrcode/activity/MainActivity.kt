@@ -11,12 +11,17 @@ import android.os.Process
 import android.os.SystemClock
 import android.provider.Settings
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.mlkit.common.MlKitException
+import com.google.mlkit.vision.barcode.common.Barcode
+import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
+import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.BuildConfig
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant
@@ -25,6 +30,7 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.OnCustomBottomDialogListener
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.OnCustomDialogListener
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isEmptyText
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isOnline
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.openUrl
 
@@ -228,7 +234,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                             override fun onDialogBind(binding: DialogUserBinding, dialog: Dialog) {
                                 dialog.setCancelable(false)
                                 binding.apply {
-                                    binding.tViewTitle.text = getString(R.string.update)
                                     binding.tViewDescription.text = updateText
                                     binding.tViewDownload.text = getString(R.string.update)
 
@@ -295,6 +300,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
 
     }
+
 
 
     private fun isPermissionGranted(): Boolean {

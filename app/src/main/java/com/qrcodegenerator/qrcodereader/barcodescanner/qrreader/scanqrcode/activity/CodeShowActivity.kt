@@ -93,6 +93,7 @@ class CodeShowActivity : BaseActivity<ActivityCodeShowBinding>() {
                     val shareIntent = Intent()
                     shareIntent.setAction(Intent.ACTION_SEND)
                     shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri)
+                    shareIntent.putExtra( Intent.EXTRA_TEXT, getString(R.string.app_name)+ "\n\n"+ Constant.tiny)
                     shareIntent.setType("image/*")
                     shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                     startActivity(Intent.createChooser(shareIntent, "QR Code"))
@@ -161,7 +162,7 @@ class CodeShowActivity : BaseActivity<ActivityCodeShowBinding>() {
             )
             historyDatabase =     HistoryDatabase(this@CodeShowActivity)
             historyDatabase?.getCodeHistoryDao()?.addHistory(user)
-            Toast.makeText(this@CodeShowActivity, "QR code save successfully", Toast.LENGTH_SHORT)
+            Toast.makeText(this@CodeShowActivity, "QR code generated successfully", Toast.LENGTH_SHORT)
                 .show()
 
         } ?: run {

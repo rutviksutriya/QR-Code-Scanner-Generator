@@ -11,10 +11,10 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isOnline
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityCalendarBinding
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds.showBackInterMoney
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -63,6 +63,7 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
             getHour2 = calendar.get(Calendar.HOUR)
             getMinute2 = calendar.get(Calendar.MINUTE)
 
+            iv1.setOnClickListener { tvStartDate.performClick() }
             tvStartDate.setOnClickListener {
                 val datePickerDialog =
                     DatePickerDialog(
@@ -79,6 +80,8 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                                     getHour1 = i
                                     getMinute1 = i2
 
+
+
                                     setStartTime(getDay1, getYear1, getMonth1, getHour1, getMinute1)
                                 },
                                 getHour1,
@@ -93,8 +96,11 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                         getDay1
                     )
                 datePickerDialog.show()
+
             }
 
+
+            iv2.setOnClickListener { tvEndDate.performClick() }
             tvEndDate.setOnClickListener {
 
                 val datePickerDialog1 =
@@ -131,6 +137,7 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
             setEndTime(getDay2, getYear2, getMonth2 + 1, getHour2, getMinute2)
 
             tvGeneratedCode.setOnClickListener {
+
                 if (TextUtils.isEmpty(editText1.text.toString())) {
 
                     Toast.makeText(
@@ -148,6 +155,12 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                     Toast.makeText(
                         this@CalendarActivity,
                         "Please enter description ",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else if ( !check()) {
+                    Toast.makeText(
+                        this@CalendarActivity,
+                        "Please select before start date and time",
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
@@ -173,7 +186,7 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                                         .putExtra("title", "Calendar")
                                         .putExtra("codeText", codeText)
                                 )
-                                finish()
+
                             }
                         })
                     }else{
@@ -183,7 +196,7 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                                     .putExtra("title", "Calendar")
                                     .putExtra("codeText", codeText)
                             )
-                            finish()
+
                         }
                     }
 
@@ -206,6 +219,28 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                     llVachaliMoneyView.llNaniCurtain
                 )
             }
+        }
+    }
+
+
+    private fun check(): Boolean{
+        val dateFormat = SimpleDateFormat(
+            "MMM dd yyyy | hh:mm aa"
+        )
+        var convertedDate: Date? = Date()
+        var convertedDate2 = Date()
+        try {
+            convertedDate = dateFormat.parse(binding.tvStartDate.text.toString())
+            convertedDate2 = dateFormat.parse(binding.tvEndDate.text.toString())
+            if (convertedDate2.after(convertedDate)) {
+                return  true
+            } else {
+                return false
+            }
+        } catch (e: ParseException) {
+            return false
+            // TODO Auto-generated catch block
+            e.printStackTrace()
         }
     }
 
@@ -247,8 +282,9 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                 format = "AM"
             }
             binding.tvEndDate.text =
-                StringBuilder().append(targetFormat.format(date)).append(" | ").append(hour)
-                    .append(" : ").append(min)
+                StringBuilder().append(targetFormat.format(date)).append(" | ").
+                append(String.format("%02d:%02d", hour, min)  )
+
                     .append(" ").append(format)
         } catch (ex: ParseException) {
 
@@ -260,6 +296,7 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
         val originalFormat = SimpleDateFormat("dd MM yyyy")
         val targetFormat = SimpleDateFormat("MMM dd yyyy")
         val date: Date
+
         try {
             date =
                 originalFormat.parse("$day $month $year")
@@ -276,8 +313,9 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
                 format = "AM"
             }
             binding.tvStartDate.text =
-                StringBuilder().append(targetFormat.format(date)).append(" | ").append(hour)
-                    .append(" : ").append(min)
+                StringBuilder().append(targetFormat.format(date)).append(" | ").
+                append(String.format("%02d:%02d", hour, min)  )
+
                     .append(" ").append(format)
         } catch (ex: ParseException) {
 

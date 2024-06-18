@@ -3,14 +3,19 @@ package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.acti
 import android.content.Intent
 import android.os.SystemClock
 import android.text.TextUtils
+import android.util.Log
 import android.util.Patterns
+import android.view.View
+import android.widget.AdapterView
 import android.widget.Toast
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.adapter.DialCodeAdapter
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isOnline
 
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityContactBinding
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.DialCodeModel
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds.showBackInterMoney
@@ -19,6 +24,8 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money
 class ContactActivity : BaseActivity<ActivityContactBinding>() {
 
     private var mLastClickTime: Long = 0
+    var countryList: ArrayList<DialCodeModel> = arrayListOf()
+    var phoneCode = "+91"
 
     override fun getViewBinding(): ActivityContactBinding {
         return ActivityContactBinding.inflate(layoutInflater)
@@ -41,6 +48,10 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
                 } else if (TextUtils.isEmpty(editText2.text.toString())) {
                     Toast.makeText(
                         this@ContactActivity, "Please enter phone number", Toast.LENGTH_SHORT
+                    ).show()
+                }else if (editText2.text.toString().length > 17 || editText2.text.toString().length <= 9) {
+                    Toast.makeText(
+                        this@ContactActivity,  "Please enter phone number length 10-16", Toast.LENGTH_SHORT
                     ).show()
                 } else if (TextUtils.isEmpty(editText3.text.toString())) {
                     Toast.makeText(this@ContactActivity, "Please enter email", Toast.LENGTH_SHORT)
@@ -67,7 +78,7 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
                 } else {
 
                     val text =
-                        "Name:- " + editText1.text.toString() + "\nPhone Number:- " + editText2.text.toString() + "\nEmail:- " + editText3.text.toString() + "\nCompany:- " + editText4.text.toString() + "\nJob Name:- " + editText5.text.toString() + "\nAddress:- " + editText6.text.toString() + "\nWebsite:- " + editText7.text.toString()
+                        "Name:- " + editText1.text.toString() + "\nPhone Number:- " +phoneCode+" "+ editText2.text.toString() + "\nEmail:- " + editText3.text.toString() + "\nCompany:- " + editText4.text.toString() + "\nJob Name:- " + editText5.text.toString() + "\nAddress:- " + editText6.text.toString() + "\nWebsite:- " + editText7.text.toString()
 
 
 
@@ -84,7 +95,7 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
                                         "title", "Contact"
                                     ).putExtra("codeText", text)
                                 )
-                                finish()
+
                             }
                         })
                     }else{
@@ -94,7 +105,7 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
                                     "title", "Contact"
                                 ).putExtra("codeText", text)
                             )
-                            finish()
+
                         }
                     }
 
@@ -114,6 +125,32 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
                     llVachaliMoneyView.flPlaceView,
                     llVachaliMoneyView.llNaniCurtain
                 )
+            }
+        }
+        setDialCode()
+
+    }
+    private fun setDialCode() {
+        binding.apply {
+            countryList.clear()
+            countryList = Constant.getCountryCodeList(this@ContactActivity)
+            val adapter = DialCodeAdapter(this@ContactActivity, countryList)
+            spCountry.adapter = adapter
+            spCountry.setSelection(97)
+            spCountry.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    phoneCode = countryList[position].dial
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
             }
         }
     }

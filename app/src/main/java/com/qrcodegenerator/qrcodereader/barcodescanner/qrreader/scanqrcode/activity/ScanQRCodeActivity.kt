@@ -1,5 +1,6 @@
 package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.activity
 
+import android.app.Activity
 import android.content.Intent
 import android.os.SystemClock
 import android.util.Log
@@ -9,9 +10,14 @@ import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.google.mlkit.common.MlKitException
+import com.google.mlkit.vision.barcode.common.Barcode
+import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
+import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isEmptyText
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityScanQrcodeBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
@@ -71,6 +77,8 @@ class ScanQRCodeActivity : BaseActivity<ActivityScanQrcodeBinding>() {
         }
 
     }
+
+
 
 
     override fun initIntentData() {

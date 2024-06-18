@@ -7,6 +7,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/_10sdp"
+
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_above="@id/ll"
         android:background="@drawable/img_ob2" />

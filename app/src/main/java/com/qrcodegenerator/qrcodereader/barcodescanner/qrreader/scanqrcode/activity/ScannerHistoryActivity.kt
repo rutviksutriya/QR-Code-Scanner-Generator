@@ -383,7 +383,7 @@ class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
                 binding.apply {
                     dialog.setCancelable(false)
                     dialog.setCanceledOnTouchOutside(false)
-                    tvDialogOk.text = getString(R.string.delete)
+                    tvDialogOkEx.text = getString(R.string.yes)
                     tvDialogDesc.text = getString(R.string.are_you_sure_you_want_to_delete)
                     tvDialogOk.gone()
                     llTow.visible()

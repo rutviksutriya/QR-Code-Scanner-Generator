@@ -1,10 +1,15 @@
 package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.core.content.FileProvider
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.BuildConfig
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.DialCodeModel
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -59,8 +64,48 @@ object Constant {
 
 
 
+    fun getCountryCodeList(activity: Activity): ArrayList<DialCodeModel> {
+        val formList = ArrayList<DialCodeModel>()
+        val code = ArrayList<String>()
+        try {
+            val obj = JSONObject(getJsonDataFromAssets(activity))
+            val mJarry: JSONArray = obj.getJSONArray("countries")
+            for (i in 0 until mJarry.length()) {
+                val jsonObject = mJarry.getJSONObject(i)
+                val formulaValue = jsonObject.getString("dial")
+                val urlValue = jsonObject.getString("name")
+                val codeValue = jsonObject.getString("code")
+                val flagValue = jsonObject.getString("flag")
+                formList.add(DialCodeModel(formulaValue, urlValue, codeValue, flagValue))
+                code.add("" + formulaValue)
+            }
+            return formList
+        } catch (e: JSONException) {
+            e.printStackTrace()
+            return formList
+        }
+    }
 
-     fun saveBitmapToFile(bitmap: Bitmap, context: Context): Uri {
+
+    private fun getJsonDataFromAssets(activity: Activity): String? {
+        val json: String? = try {
+            val stream = activity.assets.open("countrycode.json")
+            val size = stream.available()
+            val buffer = ByteArray(size)
+            stream.read(buffer)
+            stream.close()
+            String(buffer, Charsets.UTF_8)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return null
+        }
+        return json
+    }
+
+
+
+
+    fun saveBitmapToFile(bitmap: Bitmap, context: Context): Uri {
         val imagesFolder  = File(context.getExternalFilesDir(null), "images")
         if (!imagesFolder.exists()) {
             imagesFolder.mkdirs()

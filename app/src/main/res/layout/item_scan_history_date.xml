@@ -16,7 +16,7 @@
     android:textSize="@dimen/_12ssp"
     android:paddingVertical="@dimen/_5sdp"
     android:includeFontPadding="true"
-    android:paddingStart="@dimen/_10sdp"
+    android:paddingHorizontal="@dimen/_10sdp"
     android:fontFamily="@font/librefranklin_medium"
     android:gravity="start"/>
 
@@ -24,7 +24,7 @@
         android:id="@+id/rvScanHistory"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="@dimen/_5sdp"
-
+        android:layout_marginTop="@dimen/_5sdp"
         android:layout_height="match_parent"/>
 
 </LinearLayout>

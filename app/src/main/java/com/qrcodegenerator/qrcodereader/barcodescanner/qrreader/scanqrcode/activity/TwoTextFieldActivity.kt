@@ -56,13 +56,6 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
                     setupSpinner("Website")
                 }
 
-                "SMS" -> {
-                    editText1.hint = hint1
-                    editText3.hint = hint2
-                    editText1.visibility = View.VISIBLE
-                    editText2.visibility = View.GONE
-                    editText3.visibility = View.VISIBLE
-                }
 
                 "Spotify" -> {
                     editText1.hint = hint1
@@ -86,7 +79,7 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
             tvGeneratedCode.setOnClickListener {
                 if (TextUtils.isEmpty(editText1.text.toString()) && title != "Website") {
                     Toast.makeText(applicationContext, msg1, Toast.LENGTH_SHORT).show()
-                } else if (TextUtils.isEmpty(editText3.text.toString())) {
+                } else if (editText3.visibility == View.VISIBLE && TextUtils.isEmpty(editText3.text.toString())) {
                     Toast.makeText(applicationContext, msg2, Toast.LENGTH_SHORT).show()
                 } else {
 
@@ -133,23 +126,11 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
                         this@TwoTextFieldActivity, CodeShowActivity::class.java
                     ).putExtra(
                         "title", title
-                    ).putExtra("codeText", spinnerText + editText3.text.toString())
+                    ).putExtra("codeText", "Website:- "+spinnerText + editText3.text.toString())
                 )
-                finish()
+
             }
-            "SMS" -> {
-                startActivity(
-                    Intent(
-                        this@TwoTextFieldActivity, CodeShowActivity::class.java
-                    ).putExtra(
-                        "title", title
-                    ).putExtra(
-                        "codeText",
-                        "Number:- " + editText1.text.toString() + "\nMessage:- " + editText3.text.toString()
-                    )
-                )
-                finish()
-            }
+
 
             "Spotify" -> {
                 startActivity(
@@ -162,7 +143,7 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
                         "Artist Name:- " + editText1.text.toString() + "\nArtist Song:- " + editText3.text.toString()
                     )
                 )
-                finish()
+
             }
             "Wi-Fi" -> {
                 startActivity(
@@ -175,7 +156,7 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
                         "SSID:- " + editText1.text.toString() + "\nEncryption:- " + spinnerText + "\nPassword:- " + editText3.text.toString()
                     )
                 )
-                finish()
+
             }
         } }
     }

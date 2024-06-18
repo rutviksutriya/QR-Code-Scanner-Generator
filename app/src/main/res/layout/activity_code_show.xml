@@ -9,6 +9,14 @@
     android:orientation="vertical"
     tools:context=".activity.CodeShowActivity">
 
+
+
+    <include
+        android:id="@+id/toolBarView"
+        layout="@layout/tool_bar" />
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,67 +24,77 @@
         android:orientation="vertical">
 
 
-        <include
-            android:id="@+id/toolBarView"
-            layout="@layout/tool_bar" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card"
-            android:layout_width="@dimen/_220sdp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_5sdp"
-                android:layout_gravity="center_horizontal"
-            app:cardBackgroundColor="#1A0B0E21"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardElevation="@dimen/_2sdp">
-
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="0dp"
-                android:layout_margin="1dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="@dimen/_7sdp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                   >
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardBackgroundColor="#1A0B0E21"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-
-                    <ImageView
-                        android:id="@+id/ivCode"
-                        android:layout_width="@dimen/_220sdp"
-                        android:layout_height="@dimen/_220sdp" />
-
-                    <TextView
-                        android:id="@+id/tvText"
-                        android:layout_width="wrap_content"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:fontFamily="@font/librefranklin_medium"
-                        android:paddingHorizontal="@dimen/_10sdp"
-                        android:layout_marginHorizontal="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:textColor="@color/orange"
-                        android:textSize="@dimen/_14ssp"
-                        tools:text="fewgwg" />
-                </LinearLayout>
+                        app:cardElevation="0dp"
+                        android:layout_margin="1dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_7sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
 
 
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/ivCode"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_width="@dimen/_220sdp"
+                                android:layout_height="@dimen/_220sdp" />
+
+                            <TextView
+                                android:id="@+id/tvText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:fontFamily="@font/librefranklin_medium"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/_14ssp"
+                                tools:text="6515" />
+                        </LinearLayout>
 
 
-        <ImageView
-            android:id="@+id/ivShare"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:src="@drawable/ic_qr_share" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:id="@+id/ivShare"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/ic_qr_share" />
+            </LinearLayout>
+        </ScrollView>
+
+
     </LinearLayout>
 
     <include

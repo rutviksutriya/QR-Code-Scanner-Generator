@@ -28,7 +28,7 @@ class GenerateListActivity : BaseActivity<ActivityGenerateListBinding>() {
     override fun initView() {
         binding.apply {
 
-            toolBarView.tvTitle.text = resources?.getString(R.string.generate_qr)
+            toolBarView.tvTitle.text = resources?.getString(R.string._qr_code_generate)
             toolBarView.ivBack.setOnClickListener { if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                 return@setOnClickListener
             }
@@ -131,7 +131,7 @@ class GenerateListActivity : BaseActivity<ActivityGenerateListBinding>() {
                 Intent(this@GenerateListActivity, OneTextFieldActivity::class.java)
                     .putExtra("title", "WhatsApp")
                     .putExtra("hint", "Enter phone number")
-                    .putExtra("msg", "Please enter number")
+                    .putExtra("msg", "Please enter phone number")
             )
         } else if (model.name.equals("Email", true)) {
             startActivity(
@@ -204,10 +204,10 @@ class GenerateListActivity : BaseActivity<ActivityGenerateListBinding>() {
             )
         } else if (model.name.equals("SMS", true)) {
             startActivity(
-                Intent(this@GenerateListActivity, TwoTextFieldActivity::class.java)
+                Intent(this@GenerateListActivity, SMSActivity::class.java)
                     .putExtra("title", "SMS")
                     .putExtra("hint1", "Enter number")
-                    .putExtra("msg1", "Please enter number")
+                    .putExtra("msg1", "Please enter phone number")
                     .putExtra("hint2", "Enter message")
                     .putExtra("msg2", "Please enter message")
             )
