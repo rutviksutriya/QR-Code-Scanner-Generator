@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.SystemClock
 import android.text.InputType
 import android.text.TextUtils
-import android.text.method.DigitsKeyListener
-import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.AdapterView
@@ -16,12 +14,11 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.gone
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isOnline
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.visible
-
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityOneTextFieldBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.DialCodeModel
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 
 class OneTextFieldActivity : BaseActivity<ActivityOneTextFieldBinding>() {
     private var countryList: ArrayList<DialCodeModel> = arrayListOf()
@@ -186,14 +183,14 @@ class OneTextFieldActivity : BaseActivity<ActivityOneTextFieldBinding>() {
 
     override fun initIntentData() {
         if (intent.hasExtra("title")) {
-            title = intent.getStringExtra("title").toString()
+            title = intent.getStringExtra("title")?:""
         }
         if (intent.hasExtra("hint")) {
-            hint = intent.getStringExtra("hint").toString()
+            hint = intent.getStringExtra("hint")?:""
         }
 
         if (intent.hasExtra("msg")) {
-            msg = intent.getStringExtra("msg").toString()
+            msg = intent.getStringExtra("msg")?:""
         }
     }
 

@@ -10,19 +10,16 @@ import androidx.viewbinding.ViewBinding
 
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.OnCustomBottomDialogListener
 
-interface OnCustomBottomDialogListener<B> {
-    fun getBinding(): B
-    fun onDialogBind(binding: B, dialog: BottomSheetDialog)
-}
 
 class CustomBottomDialog<B : ViewBinding>(
-    private var context: Context,
-    private var onCustomDialogListener: OnCustomBottomDialogListener<B>
+    private var co: Context,
+    private var dialogListener: OnCustomBottomDialogListener<B>
 ) {
 
-    private lateinit var dialog: BottomSheetDialog
-    private lateinit var binding: B
+    private lateinit var dialogBottom: BottomSheetDialog
+    private lateinit var bindingView: B
 
     init {
         init()
@@ -30,11 +27,11 @@ class CustomBottomDialog<B : ViewBinding>(
 
     private fun init() {
 
-        dialog = BottomSheetDialog(context, R.style.CustomBottomSheetDialogTheme)
-        binding = onCustomDialogListener.getBinding()
+        dialogBottom = BottomSheetDialog(co, R.style.CustomBottomSheetDialogTheme)
+        bindingView = dialogListener.getBinding()
 
-        dialog.apply {
-            setContentView(binding.root)
+        dialogBottom.apply {
+            setContentView(bindingView.root)
             setCancelable(false)
             setCanceledOnTouchOutside(false)
             window?.setLayout(
@@ -45,16 +42,16 @@ class CustomBottomDialog<B : ViewBinding>(
             window?.setGravity(Gravity.BOTTOM)
         }
 
-        onCustomDialogListener.onDialogBind(binding, dialog)
+        dialogListener.onDialogBind(bindingView, dialogBottom)
 
     }
 
     fun getDialog(): Dialog {
-        return dialog
+        return dialogBottom
     }
 
     fun getBinding(): B {
-        return binding
+        return bindingView
     }
 
 }

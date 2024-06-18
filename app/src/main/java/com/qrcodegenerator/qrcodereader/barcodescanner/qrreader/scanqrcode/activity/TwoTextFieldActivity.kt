@@ -12,10 +12,11 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isOnline
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.visible
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityTwoTextFieldBinding
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 
 class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
     private var title = ""
@@ -51,8 +52,8 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
                 "Website" -> {
                     editText3.hint = hint2
                     editText1.visibility = View.GONE
-                    editText2.visibility = View.VISIBLE
-                    editText3.visibility = View.VISIBLE
+                    editText2.visible()
+                    editText3.visible()
                     setupSpinner("Website")
                 }
 
@@ -60,17 +61,17 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
                 "Spotify" -> {
                     editText1.hint = hint1
                     editText3.hint = hint2
-                    editText1.visibility = View.VISIBLE
+                    editText1.visible()
                     editText2.visibility = View.GONE
-                    editText3.visibility = View.VISIBLE
+                    editText3.visible()
                 }
 
                 "Wi-Fi" -> {
                     editText1.hint = hint1
                     editText3.hint = hint2
-                    editText1.visibility = View.VISIBLE
-                    editText2.visibility = View.VISIBLE
-                    editText3.visibility = View.VISIBLE
+                    editText1.visible()
+                    editText2.visible()
+                    editText3.visible()
                     setupSpinner("Wi-Fi")
                 }
             }
@@ -211,24 +212,24 @@ class TwoTextFieldActivity : BaseActivity<ActivityTwoTextFieldBinding>() {
 
     override fun initIntentData() {
         if (intent.hasExtra("title")) {
-            title = intent.getStringExtra("title").toString()
+            title = intent.getStringExtra("title")?:""
         }
 
         if (intent.hasExtra("hint1")) {
-            hint1 = intent.getStringExtra("hint1").toString()
+            hint1 = intent.getStringExtra("hint1")?:""
         }
 
         if (intent.hasExtra("msg1")) {
-            msg1 = intent.getStringExtra("msg1").toString()
+            msg1 = intent.getStringExtra("msg1")?:""
         }
 
 
         if (intent.hasExtra("hint2")) {
-            hint2 = intent.getStringExtra("hint2").toString()
+            hint2 = intent.getStringExtra("hint2")?:""
         }
 
         if (intent.hasExtra("msg2")) {
-            msg2 = intent.getStringExtra("msg2").toString()
+            msg2 = intent.getStringExtra("msg2")?:""
         }
 
 

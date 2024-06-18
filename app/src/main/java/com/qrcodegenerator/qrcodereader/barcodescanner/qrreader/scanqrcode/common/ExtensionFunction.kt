@@ -104,7 +104,7 @@ fun String.isEmptyText(): Boolean {
 
 
 fun View.visible() {
-    this.visibility = View.VISIBLE
+    this.visible()
 }
 
 fun View.invisible() {

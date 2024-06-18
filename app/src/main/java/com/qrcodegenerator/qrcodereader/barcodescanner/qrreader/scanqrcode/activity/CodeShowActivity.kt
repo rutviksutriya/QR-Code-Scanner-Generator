@@ -21,8 +21,8 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.datab
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityCodeShowBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.CodeHistoryModel
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.Data
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds.showBackInterMoney
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import java.io.ByteArrayOutputStream
 import java.io.Serializable
 import java.text.SimpleDateFormat
@@ -199,14 +199,14 @@ class CodeShowActivity : BaseActivity<ActivityCodeShowBinding>() {
 
     override fun initIntentData() {
         if (intent.hasExtra("codeText")) {
-            codeText = intent.getStringExtra("codeText").toString()
+            codeText = intent.getStringExtra("codeText") ?:""
         }
         if (intent.hasExtra("isHistory")) {
             isHistory = intent.getBooleanExtra("isHistory", false)
         }
 
         if (intent.hasExtra("title")) {
-            title = intent.getStringExtra("title").toString()
+            title = intent.getStringExtra("title")?:""
         }
         if (intent.hasExtra("details")) {
             details = intent.serializable("details") as Data

@@ -7,19 +7,16 @@ import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.OnCustomDialogListener
 
-interface OnCustomDialogListener<B> {
-    fun getBinding(): B
-    fun onDialogBind(binding: B, dialog: Dialog)
-}
 
 class CustomDialog<B : ViewBinding>(
-    private var context: Context,
-    private var onCustomDialogListener: OnCustomDialogListener<B>,
+    private var cn: Context,
+    private var listener: OnCustomDialogListener<B>,
 ) {
 
-    private lateinit var dialog: Dialog
-    private lateinit var binding: B
+    private lateinit var dialogView: Dialog
+    private lateinit var bindingView: B
 
     init {
         init()
@@ -27,11 +24,11 @@ class CustomDialog<B : ViewBinding>(
 
     private fun init() {
 
-        dialog = Dialog(context)
-        binding = onCustomDialogListener.getBinding()
+        dialogView = Dialog(cn)
+        bindingView = listener.getBinding()
 
-        dialog.apply {
-            setContentView(binding.root)
+        dialogView.apply {
+            setContentView(bindingView.root)
             setCancelable(false)
             setCanceledOnTouchOutside(false)
             window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
@@ -39,17 +36,17 @@ class CustomDialog<B : ViewBinding>(
             window?.setGravity(Gravity.CENTER)
         }
 
-        onCustomDialogListener.onDialogBind(binding, dialog)
+        listener.onDialogBind(bindingView, dialogView)
 
 
     }
 
-    fun getDialog(): Dialog {
-        return dialog
+    fun getDialogView(): Dialog {
+        return dialogView
     }
 
     fun getBinding(): B {
-        return binding
+        return bindingView
     }
 
 }

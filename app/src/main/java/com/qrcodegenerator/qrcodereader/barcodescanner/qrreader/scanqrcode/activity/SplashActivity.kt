@@ -5,7 +5,6 @@ import android.os.Handler
 import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
-
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.BuildConfig
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.MyAppClass
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
@@ -26,11 +25,11 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.removeSpace
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivitySplashBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.GetMoneyModel
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AppOpenMoney
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds.loadInterMoney
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.SplashMoneyApp
 import retrofit2.Call
 import retrofit2.Callback
@@ -360,11 +359,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         AppOpenMoney.isShowingMoney = false
         Constant.issplashshowed = true
 
-
-        Handler(mainLooper).postDelayed({
             if (SharedPrefData.getBooleanValue(Constant.IS_FIRST_TIME)) {
                 val intent = Intent(this@SplashActivity, MainActivity::class.java)
-//                val intent = Intent(this@SplashActivity, OnBoardingActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
@@ -373,7 +369,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                 startActivity(intent)
                 finish()
             }
-        }, 2000)
+
 
     }
 

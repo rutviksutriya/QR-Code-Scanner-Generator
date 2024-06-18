@@ -16,9 +16,9 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isValidationEmptyNew
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.visible
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityOnBoardingBinding
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 
 class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding>() {
     val layouts = intArrayOf(R.layout.screen1, R.layout.screen2, R.layout.screen3)

@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +15,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ExtraAdsModel
-
 import com.facebook.ads.Ad
 import com.facebook.ads.AdError
 import com.facebook.ads.InterstitialAd
@@ -31,7 +28,6 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant.fbInterstitialAd
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant.gInterstitialAd
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.CustomDialog
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.OnCustomDialogListener
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.checkIsAdAvailable
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.checkIsQurekaAvailable
@@ -40,6 +36,7 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.removeSpace
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.shareQurekaUrl
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.DialogLoadingBinding
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ExtraAdsModel
 import pl.droidsonroids.gif.GifImageView
 
 object InterMoneyAds {
@@ -697,7 +694,7 @@ object InterMoneyAds {
                 binding.apply {
                 }
             }
-        }).getDialog()
+        }).getDialogView()
     }
 
 }

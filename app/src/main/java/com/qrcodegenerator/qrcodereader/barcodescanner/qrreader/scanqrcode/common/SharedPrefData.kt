@@ -2,9 +2,9 @@ package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.comm
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.NewAdPriority
 import com.google.gson.Gson
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.MyAppClass
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.NewAdPriority
 
 object SharedPrefData {
 

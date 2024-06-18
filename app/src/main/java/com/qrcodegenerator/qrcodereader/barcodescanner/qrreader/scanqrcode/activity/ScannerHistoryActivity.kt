@@ -26,9 +26,9 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.Data
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.HistoryModel
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ScannerHistoryModel
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 
 class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
     private var adapter: HistoryDateAdapter? = null
@@ -259,7 +259,7 @@ class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
             }
         }
         if(historyModel.size == 0) {
-            binding.llNoData.visibility = View.VISIBLE
+            binding.llNoData.visible()
             binding.tvNoData.text = "Generate history not found"
             adapter?.setDataHis(historyModel)
         }else{
@@ -361,7 +361,7 @@ class ScannerHistoryActivity : BaseActivity<ActivityScannerHistoryBinding>() {
             rvScannerHistory.adapter = adapter
 
             if (historyModel.size == 0) {
-                llNoData.visibility = View.VISIBLE
+                llNoData.visible()
                 binding.tvNoData.text = "Scanner history not found"
 
                 adapter?.setDataHis(historyModel)

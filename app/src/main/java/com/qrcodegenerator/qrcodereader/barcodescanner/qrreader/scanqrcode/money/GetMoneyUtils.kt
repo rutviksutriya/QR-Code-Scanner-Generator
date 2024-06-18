@@ -1,14 +1,13 @@
 package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money
 
+
 import android.app.Activity
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ExtraAdsModel
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant.gameURL
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant.predChampURL
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant.qurekaURL
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isCheckNotEmpty
-
-
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ExtraAdsModel
 import java.util.Random
 
 object GetMoneyUtils {

@@ -24,7 +24,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('D:\\Rutvik\\Product\\NoDevName\\QR Code Scanner & Generator\\Key Store\\QR Code Scanner.jks')
+            storeFile file('D:\\Rutvik\\Product\\Color Call Themes\\QR Code Scanner & Generator\\Key Store\\QR Code Scanner.jks')
             storePassword 'QRCodeScanner123'
             keyPassword 'QRCodeScanner123'
             keyAlias 'QRCodeScanner'
@@ -68,7 +68,6 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.browser
     implementation libs.androidx.lifecycle.process
-    implementation libs.play.services.vision
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
@@ -96,7 +95,6 @@ dependencies {
     implementation libs.core
     // scanner
     implementation libs.code.scanner
-    implementation libs.play.services.code.scanner
 
     // GIF
     implementation libs.android.gif.drawable

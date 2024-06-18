@@ -19,8 +19,6 @@ import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ExtraAdsModel
-
 import com.facebook.ads.Ad
 import com.facebook.ads.AdError
 import com.facebook.ads.AdOptionsView
@@ -61,6 +59,7 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.shareQurekaUrl
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.visible
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.MoneyOpenAdBinding
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ExtraAdsModel
 import pl.droidsonroids.gif.GifImageView
 
 
@@ -776,7 +775,7 @@ object LessMoneyBannerAds {
             clickableViews
         )
 
-        motoAdMedia.visibility = View.VISIBLE
+        motoAdMedia.visible()
     }
 
 
@@ -1602,14 +1601,14 @@ object LessMoneyBannerAds {
 
             adView.bodyView!!.visibility = View.GONE
         } else {
-            adView.bodyView!!.visibility = View.VISIBLE
+            adView.bodyView!!.visible()
             (adView.bodyView as TextView?)!!.text = nativeAd.body
         }
         if (nativeAd.callToAction == null) {
 
             adView.callToActionView!!.visibility = View.GONE
         } else {
-            adView.callToActionView!!.visibility = View.VISIBLE
+            adView.callToActionView!!.visible()
             (adView.callToActionView as TextView?)!!.text = nativeAd.callToAction
             (adView.callToActionView as TextView?)!!.background =
                 getMoneyActivity.resources.getDrawable(R.drawable.btn_blue_btn)
@@ -1620,7 +1619,7 @@ object LessMoneyBannerAds {
             (adView.iconView as ImageView?)!!.setImageDrawable(
                 nativeAd.icon!!.drawable
             )
-            adView.iconView!!.visibility = View.VISIBLE
+            adView.iconView!!.visible()
         }
         if (nativeAd.price == null) {
 
@@ -1648,7 +1647,7 @@ object LessMoneyBannerAds {
             adView.advertiserView!!.visibility = View.GONE
         } else {
             (adView.advertiserView as TextView?)!!.text = nativeAd.advertiser
-            adView.advertiserView!!.visibility = View.VISIBLE
+            adView.advertiserView!!.visible()
         }
         adView.setNativeAd(nativeAd)
         val vc = nativeAd.mediaContent!!.videoController
@@ -1670,7 +1669,7 @@ object LessMoneyBannerAds {
 
                 override fun onChildViewRemoved(parent: View, child: View) {}
             })
-            mideaview.visibility = View.VISIBLE
+            mideaview.visible()
         }
     }
 

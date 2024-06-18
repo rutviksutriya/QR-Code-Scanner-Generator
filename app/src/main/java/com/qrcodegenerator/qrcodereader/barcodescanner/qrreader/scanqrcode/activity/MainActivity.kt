@@ -1,46 +1,36 @@
 package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.activity
 
 import android.Manifest
-import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Process
 import android.os.SystemClock
-import android.provider.Settings
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.mlkit.common.MlKitException
-import com.google.mlkit.vision.barcode.common.Barcode
-import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
-import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.BuildConfig
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.CustomBottomDialog
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.CustomDialog
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.OnCustomBottomDialogListener
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.OnCustomDialogListener
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isEmptyText
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.isOnline
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.openUrl
-
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityMainBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.DialogExitFromAppBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.DialogUserBinding
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AppOpenMoney
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.AagalJav
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.OnCustomBottomDialogListener
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.OnCustomDialogListener
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.SplashMoneyApp
 import kotlin.system.exitProcess
 
@@ -250,7 +240,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                             }
 
                         })
-                        dialog.getDialog().show()
+                        dialog.getDialogView().show()
 
                     }
                 }

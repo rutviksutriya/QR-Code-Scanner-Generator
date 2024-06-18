@@ -13,8 +13,8 @@ import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.commo
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.database.HistoryDatabase
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.databinding.ActivityShareDataBinding
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.model.ScannerHistoryModel
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.InterMoneyAds
+import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.money.LessMoneyBannerAds
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -136,7 +136,7 @@ class ShareDataActivity : BaseActivity<ActivityShareDataBinding>() {
     override fun initIntentData() {
         historyDatabase =     HistoryDatabase(this@ShareDataActivity)
         if (intent.hasExtra("result")) {
-            resultData = intent.getStringExtra("result").toString()
+            resultData = intent.getStringExtra("result")?:""
         }
         if (intent.hasExtra("isHistory")) {
             isHistory = intent.getBooleanExtra("isHistory", false)

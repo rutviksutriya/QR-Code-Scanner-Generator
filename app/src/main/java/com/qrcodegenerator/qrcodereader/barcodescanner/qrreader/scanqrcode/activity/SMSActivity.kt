@@ -1,16 +1,11 @@
 package com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.activity
 
 import android.content.Intent
-import android.os.Bundle
 import android.os.SystemClock
 import android.text.TextUtils
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.R
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.adapter.DialCodeAdapter
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.Constant
 import com.qrcodegenerator.qrcodereader.barcodescanner.qrreader.scanqrcode.common.SharedPrefData
@@ -166,24 +161,24 @@ class SMSActivity : BaseActivity<ActivitySmsBinding>() {
 
     override fun initIntentData() {
         if (intent.hasExtra("title")) {
-            title = intent.getStringExtra("title").toString()
+            title = intent.getStringExtra("title")?:""
         }
 
         if (intent.hasExtra("hint1")) {
-            hint1 = intent.getStringExtra("hint1").toString()
+            hint1 = intent.getStringExtra("hint1")?:""
         }
 
         if (intent.hasExtra("msg1")) {
-            msg1 = intent.getStringExtra("msg1").toString()
+            msg1 = intent.getStringExtra("msg1")?:""
         }
 
 
         if (intent.hasExtra("hint2")) {
-            hint2 = intent.getStringExtra("hint2").toString()
+            hint2 = intent.getStringExtra("hint2")?:""
         }
 
         if (intent.hasExtra("msg2")) {
-            msg2 = intent.getStringExtra("msg2").toString()
+            msg2 = intent.getStringExtra("msg2")?:""
         }
 
     }
